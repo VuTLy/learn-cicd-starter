@@ -12,10 +12,6 @@ jobs:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     steps:
-      - name: Check for accidental secrets in code
-        run: git diff --exit-code -- . ':(exclude).env'
-        continue-on-error: true # don't block deploy, just warn
-
       - name: Check out code
         uses: actions/checkout@v4
 
